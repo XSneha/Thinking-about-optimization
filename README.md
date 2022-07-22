@@ -26,8 +26,9 @@ Below, I am trying to document my learning while trying to become good with opti
 
 ## How to find ways to optimise your code?
 - For any problem like the above, start figuring out the patterns. 
-- For example, factors of 10 are : 1,2,5,10 (observed something?)
-- Factors of 100 are : (1*100) , (2*50) , (4*25) , (5*20), (10*10) lets consider all these pairs as (a*b) where N=a*b where all a<=b and b = N/a
+- For example, factors of 10 are : 1,2,5,10(observed something?) => (1*10)=>10  (2*5)=>10
+- Same way, Factors of 100 are 
+	(1*100) , (2*50) , (4*25) , (5*20), (10*10) lets consider all these pairs as (a*b) where N=a*b where all a<=b and b = N/a
 - Now as a <=b	=> a <= N/a => a^2 <= N i.e a<= sqrt(N), max value of a will be sqrt(N).
 - For every a there are equal number of b's (one corner case we need to consider i.e : a==b in above case 10*10)
 - With the help of above observations, our code will be
@@ -66,10 +67,43 @@ Below, I am trying to document my learning while trying to become good with opti
 	}	
     ```  
 - Let's observe one example to find out the sqrt of 64 (64 is a perfect square). Let's apply divide and conquer, 
-	1: 64/2 -> 32 & 32*32= 1024 > 64 , so discard all possibilities which are greater than 32, now max is 32, 
-	2: 32/2 = 16 & 16*16 = 256 >64 , now discard all valued greater than 16,
-	3: 16/2 = 8 & 8*8 == 64. so return 8, and we reached to the correct answer in just 3 steps.
+	1. 64/2 -> 32 & 32*32= 1024 > 64 , so discard all possibilities which are greater than 32, now max is 32, 
+	2. 32/2 = 16 & 16*16 = 256 >64 , now discard all valued greater than 16,
+	3. 16/2 = 8 & 8*8 == 64. so return 8, and we reached to the correct answer in just 3 steps.
  
-				 
+- Arithmatic Progressions : a, a+d , a+2d , a+3d , ... , a+(n-1)d
+	Sum of 1st n terms in AP :  S = n/2(2a+(n-1)d) , refer above link if want to know how this formula is derived.
+
+- Geometric Progressions : a , a*r , a*r2 , ... , a* (r^n-1)
+	Sum of 1st n terms in GP : S=a(r^(n-1))/(r-1)
+
+## Calculating the number of iterations
+
+-lets take one tricky example 
+   	```java
+  	//brute force approach 
+	for(int i=0; i < n ;i++){ 
+		for(int j=1; j <= n ; j = j*2){
+			print(i & j)
+		}
+	}
+	/**
+		Note : we are multiplying j by 2 till j < n  , the number of iterations will also be similar in case of j=n ; j>1 ; j=j/2
+		//i.e. we are dividing the number till it bocomes 1 (i.e. logN)
+
+	   	|	iteration of i	|	total iterations of j	|
+	   	| 	 1		| 	[1 1] 			|	
+		|	 2		|       [1 2]  log2		|
+		|	 3		|  	[1 2]  log3()		|
+		|	 .		|		.		|
+		|	 .		|		.		|
+		|	 .		|		.		|
+		| 	 N		| 	[1 LogN] 		|
+		| Total iterations 	| 	N * log(N)		|
+		**/	
+    	```  
+
+## Time complexity 
+	 logN < sqrt(n) < N < Nlog(N) < N^2 < 2^n < N!				 
  
 
