@@ -26,11 +26,11 @@ Below, I am trying to document my learning while trying to become good with opti
 
 ## How to find ways to optimise your code?
 - For any problem like the above, start figuring out the patterns. 
-- For example, factors of 10 are : 1,2,5,10(observed something?) => (1*10)=>10  (2*5)=>10
+- For example, factors of 10 are : 1,2,5,10(observed something?) => (1 * 10)=>10  (2 * 5)=>10
 - Same way, Factors of 100 are 
-	(1*100) , (2*50) , (4*25) , (5*20), (10*10) lets consider all these pairs as (a*b) where N=a*b where all a<=b and b = N/a
-- Now as a <=b	=> a <= N/a => a^2 <= N i.e a<= sqrt(N), max value of a will be sqrt(N).
-- For every a there are equal number of b's (one corner case we need to consider i.e : a==b in above case 10*10)
+	(1 * 100) , (2 * 50) , (4 * 25) , (5 * 20), (10 * 10) lets consider all these pairs as (a*b) where N=a*b where all a<=b and b = N/a
+- Now as a <=b	-> a <= N/a -> a^2 <= N i.e a<= sqrt(N), max value of a will be sqrt(N).
+- For every a there are equal number of b's, also consider a corner case where : a==b (in above case 10*10)
 - With the help of above observations, our code will be
   ```java
     	int countFactors(int n){
@@ -80,6 +80,7 @@ Below, I am trying to document my learning while trying to become good with opti
 ## Calculating the number of iterations
 
 -lets take one tricky example 
+
    	```java
   	//brute force approach 
 	for(int i=0; i < n ;i++){ 
@@ -87,7 +88,7 @@ Below, I am trying to document my learning while trying to become good with opti
 			print(i & j)
 		}
 	}
-	/**
+	/*
 		Note : we are multiplying j by 2 till j < n  , the number of iterations will also be similar in case of j=n ; j>1 ; j=j/2
 		//i.e. we are dividing the number till it bocomes 1 (i.e. logN)
 
@@ -100,7 +101,7 @@ Below, I am trying to document my learning while trying to become good with opti
 		|	 .		|		.		|
 		| 	 N		| 	[1 LogN] 		|
 		| Total iterations 	| 	N * log(N)		|
-		**/	
+		*/	
     	```  
 
 ## Time complexity 
