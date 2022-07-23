@@ -107,4 +107,4 @@ Below, I am trying to document my learning while trying to become good with opti
 ## Time complexity 
 	 logN < sqrt(n) < N < Nlog(N) < N^2 < 2^n < N!				 
  
-
+If complexities can be this simple, why people blame each-other? Hate each-other? why they complicate stuff and misunderstand each-other? 
