@@ -109,3 +109,4 @@ Below, I am trying to document my learning while trying to become good with opti
 Even worst case complexities are esier because we need to think in perspective of N.i.e. input we are receiving. I know so selfish right?😂
 But that's important, never miss the input constraints to avoid TLE. 
 
+Jokes apart, if you could not respect the input, you have to face the loss. 
