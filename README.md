@@ -5,7 +5,7 @@ A lot of people (like me) like problem solving, but a lot of times we get stuck.
 
 Below, I am trying to document my learning while trying to become good with optimizations while problem solving.
 
-## Why do we need to consider optimization?
+## Why do we need to consider optimization ?
 - Take the simple example of writing a programme to get the number of factors of a given number.
 - Suppose we are doing it as below 
 
